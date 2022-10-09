@@ -7,4 +7,7 @@ export const colors = {
   prussianBlue: "#253D5B",
   black: "#0D0106",
   blackOlive: "#403D39",
+  yellowgreen: "#95C623",
+  darkGreen: "#002626",
+  warmGreen: "#0E4749",
 };

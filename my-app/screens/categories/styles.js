@@ -1,11 +1,8 @@
-import { StyleSheet } from "react-native";
-import { colors } from "../../constants/colors";
+import { StyleSheet, StatusBar } from "react-native";
+import { isAndroid } from "../../utils/functions";
 
 export const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: colors.blackOlive,
   },
 });

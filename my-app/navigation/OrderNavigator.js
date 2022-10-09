@@ -1,20 +1,15 @@
-import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {
-  CategoriesScreen,
-  ProductDetailScreen,
-  CategoryProductScreen,
-} from "../screens/index";
-import { Platform, View, Text } from "react-native";
+import React from "react";
 import { colors } from "../constants/colors";
+import { OrdersScreen } from "../screens/index";
 import { LinearGradient } from "expo-linear-gradient";
 
 const Stack = createNativeStackNavigator();
 
-const ShopNavigator = () => {
+const OrdersNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Orders"
       screenOptions={{
         headerTintColor: Platform.OS === "ios" ? colors.red : colors.lightSteel,
         headerTitleStyle: {
@@ -33,22 +28,12 @@ const ShopNavigator = () => {
       }}
     >
       <Stack.Screen
-        name="Home"
-        component={CategoriesScreen}
-        options={{ title: "Music World" }}
-      />
-      <Stack.Screen
-        name="Products"
-        component={CategoryProductScreen}
-        options={({ route }) => ({ title: route.params.name })}
-      />
-      <Stack.Screen
-        name="Detail"
-        component={ProductDetailScreen}
-        options={({ route }) => ({ title: route.params.name })}
+        name="Orders"
+        component={OrdersScreen}
+        options={{ title: "Ordenes" }}
       />
     </Stack.Navigator>
   );
 };
 
-export default ShopNavigator;
+export default OrdersNavigator;

@@ -1,20 +1,16 @@
 import React from "react";
+import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {
-  CategoriesScreen,
-  ProductDetailScreen,
-  CategoryProductScreen,
-} from "../screens/index";
-import { Platform, View, Text } from "react-native";
+import { CartScreen } from "../screens/index";
 import { colors } from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 
 const Stack = createNativeStackNavigator();
 
-const ShopNavigator = () => {
+const CartNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Cart"
       screenOptions={{
         headerTintColor: Platform.OS === "ios" ? colors.red : colors.lightSteel,
         headerTitleStyle: {
@@ -33,22 +29,12 @@ const ShopNavigator = () => {
       }}
     >
       <Stack.Screen
-        name="Home"
-        component={CategoriesScreen}
-        options={{ title: "Music World" }}
-      />
-      <Stack.Screen
-        name="Products"
-        component={CategoryProductScreen}
-        options={({ route }) => ({ title: route.params.name })}
-      />
-      <Stack.Screen
-        name="Detail"
-        component={ProductDetailScreen}
-        options={({ route }) => ({ title: route.params.name })}
-      />
+        name="Cart"
+        component={CartScreen}
+        options={{ title: "Carrito" }}
+      ></Stack.Screen>
     </Stack.Navigator>
   );
 };
 
-export default ShopNavigator;
+export default CartNavigator;

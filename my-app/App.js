@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import { useFonts } from "expo-font";
 import { colors } from "./constants/colors";
 import AppNavigator from "./navigation";
-
+import { Provider } from "react-redux";
+import store from "./store/index";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -27,5 +28,9 @@ export default function App() {
     );
   }
 
-  return <AppNavigator />;
+  return (
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
+  );
 }

@@ -3,10 +3,10 @@ import { View, Text, Image, FlatList } from "react-native";
 import { BANDS } from "../../data/bands";
 import { styles } from "./styles";
 import IoniIcons from "@expo/vector-icons/Ionicons";
+import { useSelector } from "react-redux";
 
-const ProductDetailScreen = ({ route }) => {
-  const { productId } = route.params;
-  const album = BANDS.find((product) => product.id === productId);
+const ProductDetailScreen = () => {
+  const album = useSelector((state) => state.products.selected);
   const rank = [];
   for (let index = 0; index < album.rank; index++) {
     rank.push(<IoniIcons name={"star"} size={15} key={index} />);
